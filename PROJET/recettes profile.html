@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes</title>
+    <style>
+        /* Styles CSS pour la mise en page */
+        body {
+            font-family: cursive, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fffdfde8;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            position: relative; /* Ajout d'une position relative pour positionner l'image absolument */
+            border: gray;
+        }
+
+        .search-bar input[type="text"] {
+           /* width: calc(70% - 40px); /* Ajustement de la largeur du champ de saisie */
+           width: 90%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .menu {
+            margin-right: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #140131;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: 0.6s ease;
+        }
+
+        .menu ul li a:hover {
+            color: #000;
+        }
+
+        .profile a {
+            text-decoration: none;
+            color: #fefdff;
+            font-weight: 500;
+            transition: 0.6s ease;
+            background-color: #a77b04;
+            border-radius: 30px;
+            padding: 13px;
+        }
+
+        .profile a:hover {
+            color: #887878;
+           
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 3 colonnes */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .recipe {
+            border: 2px solid #141313e8; /* Bordure noire */
+            text-align: center;
+            padding: 10px;
+        }
+
+        .recipe a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .recipe img {
+            width: 100%;
+            height: 200px; /* Hauteur fixe pour toutes les images */
+            object-fit: cover; /* Ajuste la taille pour couvrir le conteneur sans déformer l'image */
+        }
+
+        .recipe h3 {
+            margin-top: 10px;
+            color: black; /* Couleur du titre h3 en noir */
+        }
+        .recipe-submission {
+            text-align: center; /* Pour centrer le texte */
+        }
+
+        .recipe-submission p {
+            font-size: 20px;  
+            letter-spacing: 3px;
+        }
+
+        .submit-button {
+            display: inline-block; /* Pour que le bouton respecte le centrage */
+            text-decoration: none;
+            color: #f1ecf5;
+            font-weight: 500;
+            transition: 0.6s ease;
+            background-color: #a77b04;
+            border-radius: 30px;
+            padding: 20px 40px; /* Ajustement de la taille du bouton */
+            margin-top: 20px; /* Espacement du bouton par rapport au paragraphe */
+        }
+
+        .submit-button:hover {
+            color: #887878;
+        }
+
+        /* Styles pour la barre de filtre */
+        .filter-bar {
+            text-align: center;
+            padding: 25px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 20px;
+            position: relative; /* Ajoutez ceci pour positionner le titre h3 */
+        }
+
+        .filter-bar:before {
+            content: ""; /* Ajoutez un pseudo-élément pour l'image de fond */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("hero-image.jpg"); /* Ajoutez l'image de fond ici */
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: blur(6px); /* Applique le flou à l'image de fond */
+            z-index: -1; /* Assurez-vous que l'image de fond est derrière les autres éléments */
+            border-radius: 20px; /* Ajustez le rayon de la bordure pour correspondre */
+        }
+
+        .filter-dropdown {
+            margin: 0 10px;
+            border-radius: 20px;
+        }
+
+        .filter-dropdown input[type="text"] {
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            width: 200px; /* Largeur des champs de saisie */
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .filter-bar a {
+            text-decoration: none;
+            color: #fdfcff;
+            font-weight: 500;
+            transition: 0.6s ease;
+            background-color: #a77b04;
+            border-radius: 30px;
+            padding: 10px;
+        }
+
+        h3{
+           /* background-color: white;
+            /*border-radius: 30px;*/
+            position: relative; /* Ajoutez ceci pour placer le titre au-dessus de l'image de fond */
+            z-index: 2; /* Assurez-vous que le titre est devant l'image de fond */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGO1.png" alt="Logo" height="80px" width="80%">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Recherchez des recettes...">
+            <div class="search-icon">
+                <a href="#"><img src="chercher.png" alt="Rechercher"></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="accueil profile.html">Accueil</a></li>
+                <li><a href="recettes profile.html">Recettes</a></li>
+                <li><a href="page a propos.html">À propos</a></li>
+                <li><a href="page contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="profile">
+          <a href="profile.php">Mon profile</a>  
+      </div>
+    </header>
+
+    <section class="filter-bar">
+        <h3>Filtrer par ingrédient :</h3>
+        <div class="filter-dropdown">
+            <input type="text" name="légumes" placeholder="Légumes">
+        </div>
+        <div class="filter-dropdown">
+            <input type="text" name="fruits" placeholder="Fruits">
+        </div>
+        <div class="filter-dropdown">
+            <input type="text" name="produits-laitiers" placeholder="Produits laitiers">
+        </div>
+        <a href="#" onclick="filterRecipes()">Filtrer</a>
+    </section>
+
+    <div class="grid-container">
+        <div class="recipe">
+            <a href="page detail salade cesar.html">
+                <img src="Ensalada Cesar (Classic Caesar Salad).jpg" alt="Recette 2">
+                <h3>SALADE CÉSAR</h3>
+            </a>
+            </div>
+        <div class="recipe">
+            <a href="page detail recette.html">
+                <img src="Mousse au chocolat - recette selon Alain Ducasse.jpg" alt="Recette ">
+                <h3>MOUSSE AU CHOCOLAT </h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail recette.html">
+                <img src="Recette tagliatelles aux crevettes, aux champignons et à la crème fraîche !.jpg" alt="Recette ">
+                <h3>TAGLIATELLES AUX CREVETTES </h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail fondant.html">
+                <img src="Moelleux au Chocolat au Coeur Fondant.jpg" alt="Recette 5">
+                <h3>FONDANT AU ChOCOLAT</h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail recette.html">
+                <img src="Gratin de pommes de terre au cheddar - Elle Mijote Quelque Chose.jpg" alt="Recette ">
+                <h3>GRATIN DE POMMES DE TERRE </h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail recette.html">
+                <img src="POISSON AU FOUR_ AVEC SEULEMENT QUELQUES ÉPICES RÉALISEZ CETTE EXCELLENTE MARINADE !.jpg" alt="Recette ">
+                <h3>POISSON AU FOUR </h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail recette.html">
+                <img src="Le pain perdu.jpg" alt="Recette ">
+                <h3>PAIN PERDU</h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail lasagnes.html">
+                <img src="The BEST Vegan Lasagna _ Meaty, Cheesy, And Fast!.jpg" alt="Recette 6">
+                <h3>LASAGNES A LA BOLOGNAISE</h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail recette.html">
+                <img src="Tiramisu - Véritable Recette Italienne - La Recette du Tiramisu _ Galbani.jpg" alt="Recette ">
+                <h3>TIRAMISU </h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail recette.html">
+                <img src="Soupe de lentilles corail au thermomix » Recette Thermomix.jpg" alt="Recette ">
+                <h3>SOUPE DE LENTILLES CORAIL </h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail recette.html">
+                <img src="_Certainement Les Meilleurs Cookies Aux Pépites de Chocolat Que J'ai Jamais Mangés__.jpg" alt="Recette ">
+                <h3>COOKIES AUX PÉPITES DE CHOCOLAT </h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail recette.html">
+                <img src="Rôti de boeuf aux pommes de terre et champignons - Recette par Plat et recette.jpg" alt="Recette ">
+                <h3>RÔTI DE BŒUF </h3>
+            </a>
+        </div>
+        <!-- Répétez ces div.recipe pour chaque recette -->
+
+    </div>
+    <section class="recipe-submission">
+      <p>Vous avez une délicieuse recette à partager avec nous ? Soumettez-la dès maintenant !</p>
+      <a href="page soumission.html" class="submit-button">Soumettre une Recette</a>
+  </section>
+</body>
+</html>

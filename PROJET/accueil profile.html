@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes</title>
+    <style>
+        /* Styles CSS pour la mise en page */
+        body {
+            font-family: cursive, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fffdfde8;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .search-bar input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .menu {
+            margin-right: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #140131;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: 0.6s ease;
+        }
+
+        .menu ul li a:hover {
+            color: #000;
+        }
+
+        .profile a {
+            text-decoration: none;
+            color: #fefdff;
+            font-weight: 500;
+            transition: 0.6s ease;
+            background-color: #a77b04;
+            border-radius: 30px;
+            padding: 13px;
+        }
+
+        .profile a:hover {
+            color: #887878;
+        }
+
+        .hero {
+            position: relative;
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("hero-image.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: blur(5px); /* Applique un flou à l'image de fond */
+            z-index: -1;
+        }
+
+        .content {
+             position: relative;
+            z-index: 1;
+        }
+
+        .content h1, .content p {
+            color: black; /* Couleur du texte */
+            text-align: center;
+        }
+
+
+        h2{
+            text-align: center;
+            font-size: 30px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #141313e8;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .recipe {
+            border: 2px solid #141313e8; /* Bordure noire */
+            text-align: center;
+            padding: 10px;
+        }
+
+        .recipe a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .recipe img {
+            width: 100%;
+            height: 200px; /* Hauteur fixe pour toutes les images */
+            object-fit: cover; /* Ajuste la taille pour couvrir le conteneur sans déformer l'image */
+        }
+
+        .recipe h3 {
+            margin-top: 10px;
+            color: black; /* Couleur du titre h3 en noir */
+        }
+
+        .recipe-submission {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .recipe-submission p {
+            font-size: 20px;
+            letter-spacing: 3px;
+            padding: 20px;
+        }
+
+        .submit-button {
+            text-decoration: none;
+            color: #faf7fd;
+            font-weight: 500;
+            transition: 0.6s ease;
+            background-color: #a77b04;
+            border-radius: 30px;
+            padding: 20px 40px;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            color: #887878;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGO1.png" alt="Logo" height="80px" width="80%">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Recherchez des recettes...">
+            <div class="search-icon">
+                <a href="#"><img src="chercher.png" alt="Rechercher"></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="accueil profile.html">Accueil</a></li>
+                <li><a href="recipes_grid.php">Recettes</a></li>
+                <li><a href="page a propos.html">À propos</a></li>
+                <li><a href="page contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="profile">
+          <a href="profile.php">Mon profile</a>  
+      </div>
+    </header>
+
+    <div class="hero">
+        <div class="background-image"></div> 
+        <div class="content">
+            <h1>Bienvenue sur notre site de recettes !</h1>
+            <p>Explorez et découvrez des saveurs uniques pour ravir vos papilles.</p>
+        </div>
+    </div>
+    <h2>Recettes Populaires</h2>
+    <div class="grid-container">
+        <div class="recipe">
+            <a href="page detail pancake.html">
+                <img src="Pancakes moelleux au fromage blanc · Aux délices du palais.jpg" alt="Recette 1">
+                <h3>PANCAKES</h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail salade cesar.html">
+                <img src="Ensalada Cesar (Classic Caesar Salad).jpg" alt="Recette 2">
+                <h3>SALADE CÉSAR</h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail tarte au fraise.html">
+                <img src="Tarte aux fraises classique.jpg" alt="Recette 3">
+                <h3>TARTE AUX FRAISES</h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail pizza.html">
+                <img src="Neapolitan Pizza Dough.jpg" alt="Recette 4">
+                <h3>PIZZA NAPOLITAINE</h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail fondant.html">
+                <img src="Moelleux au Chocolat au Coeur Fondant.jpg" alt="Recette 5">
+                <h3>FONDANT AU ChOCOLAT</h3>
+            </a>
+        </div>
+        <div class="recipe">
+            <a href="page detail lasagnes.html">
+                <img src="The BEST Vegan Lasagna _ Meaty, Cheesy, And Fast!.jpg" alt="Recette 6">
+                <h3>LASAGNES A LA BOLOGNAISE</h3>
+            </a>
+        </div>
+    </div>
+
+    <section class="recipe-submission">
+      <p>Vous avez une délicieuse recette à partager avec nous ? Soumettez-la dès maintenant !</p>
+      <a href="page soumission.html" class="submit-button">Soumettre une Recette</a>
+  </section>
+  </body>
+  </html>

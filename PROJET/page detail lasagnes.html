@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes</title>
+    <style>
+        /* Styles CSS pour la mise en page */
+        body {
+            font-family: cursive, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fffdfde8;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            position: relative; /* Ajout d'une position relative pour positionner l'image absolument */
+            border: gray;
+        }
+
+        .search-bar input[type="text"] {
+            /* width: calc(70% - 40px); /* Ajustement de la largeur du champ de saisie */
+            width: 90%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .menu {
+            margin-right: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #140131;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: 0.6s ease;
+        }
+
+        .menu ul li a:hover {
+            color: #000;
+        }
+
+        .user-actions a {
+            text-decoration: none;
+            color: #fefdff;
+            font-weight: 500;
+            transition: 0.6s ease;
+            background-color: #a77b04;
+            border-radius: 30px;
+            padding: 13px;
+        }
+
+        .user-actions a:hover {
+            color: #887878;
+        }
+
+        .recipe-details {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .recipe-details h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .recipe-details ul {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 15px;
+        }
+
+        .recipe-details ul li {
+            margin-bottom: 5px;
+        }
+
+        .recipe-details img {
+            display: block;
+            margin: 10px auto;
+            /*width: 200px;
+            height: 300px;*/
+        }
+        .recipe-details ul li ul li {
+            text-indent: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGO1.png" alt="Logo" height="80px" width="80%">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Recherchez des recettes...">
+            <div class="search-icon">
+                <a href="#"><img src="chercher.png" alt="Rechercher"></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="page accueil.html">Accueil</a></li>
+                <li><a href="page recette.html">Recettes</a></li>
+                <li><a href="page a propos.html">À propos</a></li>
+                <li><a href="page contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="user-actions">
+            <a href="login page.html">Se connecter</a>  
+        </div>
+    </header>
+
+    <div class="recipe-details">
+        <h2>LASAGNES A LA BOLOGNAISE</h2>
+        <img src="Lasagnes à la bolognaise très facile.jpg" alt="Photo de la recette">
+        <ul>
+            <li><strong>Liste des ingrédients :</strong>
+                <ul>
+                    <li>500g de viande de bœuf hachée</li>
+                    <li>1 oignon, haché finement</li>
+                    <li>2 gousses d'ail, hachées</li>
+                    <li>400g de tomates concassées en conserve</li>
+                    <li>200ml de coulis de tomate</li>
+                    <li>1 carotte, râpée</li>
+                    <li>1 branche de céleri, finement hachée</li>
+                    <li>1 cuillère à soupe d'huile d'olive</li>
+                    <li>Sel et poivre au goût</li>
+                    <li>Herbes de Provence (optionnel)</li>
+                    <li>250g de feuilles de lasagnes fraîches ou sèches</li>
+                    <li>400g de fromage ricotta</li>
+                    <li>200g de fromage mozzarella râpé</li>
+                    <li>50g de parmesan râpé</li>
+                </ul>
+            </li>
+            <li><strong>Préparation :</strong>
+                        <ol>
+                            <li><strong>éparation de la sauce bolognaise :</strong>
+                                <ul>
+                                    <li>Dans une grande poêle, faites chauffer 1 cuillère à soupe d'huile d'olive à feu moyen.</li>
+                                    <li>Ajoutez 1 oignon finement haché et 2 gousses d'ail hachées. Faites-les revenir jusqu'à ce qu'ils soient translucides.</li>
+                                    <li>Ajoutez 500g de viande de bœuf hachée dans la poêle. Faites cuire la viande jusqu'à ce qu'elle soit bien dorée.</li>
+                                    <li>Ajoutez 1 carotte râpée et 1 branche de céleri finement hachée dans la poêle. Laissez cuire pendant quelques minutes.</li>
+                                    <li>Versez 400g de tomates concassées en conserve et 200ml de coulis de tomate dans la poêle. Assaisonnez avec du sel, du poivre et des herbes de Provence. Laissez mijoter à feu doux pendant environ 20 à 30 minutes, en remuant de temps en temps.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Péparation des feuilles de lasagnes :</strong>
+                                <ul>
+                                    <li>Faites bouillir de l'eau dans une grande casserole avec un peu de sel.</li>
+                                    <li>Plongez les feuilles de lasagnes (environ 250g) dans l'eau bouillante et laissez-les cuire selon les instructions sur l'emballage.</li>
+                                    <li>Une fois cuites, égouttez-les et passez-les sous l'eau froide pour arrêter la cuisson.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Montage des lasagnes :</strong>
+                                <ul>
+                                    <li>Préchauffez votre four à 180°C (thermostat 6).</li>
+                                    <li>Dans un plat à gratin, étalez une fine couche de sauce bolognaise au fond.</li>
+                                    <li>Disposez une couche de feuilles de lasagnes par-dessus, en les chevauchant légèrement.</li>
+                                    <li>Étalez une couche de ricotta (environ 400g) sur les feuilles de lasagnes et saupoudrez de mozzarella râpée (environ 200g).</li>
+                                    <li>Répétez ces couches jusqu'à ce que tous les ingrédients soient utilisés, en terminant par une couche de sauce bolognaise.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Cuisson :</strong>
+                                <ul>
+                                    <li>Saupoudrez le dessus des lasagnes avec 50g de parmesan râpé.</li>
+                                    <li>Enfournez les lasagnes pendant environ 25 à 30 minutes, jusqu'à ce qu'elles soient dorées et que le fromage soit fondu.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Temps de préparation :</strong> environ 30 minutes</li>
+            <li><strong>Temps de cuisson :</strong> environ 30 minutes</li>
+            <li><strong>Nombre de portions :</strong> 4 à 6 personnes</li>
+            <li><strong>Coût Total :</strong> 10-15 euros.</li>
+        </ul>
+    </div>
+</body>
+</html>

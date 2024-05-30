@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes</title>
+    <style>
+        /* Styles CSS pour la mise en page */
+        body {
+            font-family: cursive, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fffdfde8;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            position: relative; /* Ajout d'une position relative pour positionner l'image absolument */
+            border: gray;
+        }
+
+        .search-bar input[type="text"] {
+            /* width: calc(70% - 40px); /* Ajustement de la largeur du champ de saisie */
+            width: 90%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .menu {
+            margin-right: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #140131;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: 0.6s ease;
+        }
+
+        .menu ul li a:hover {
+            color: #000;
+        }
+
+        .user-actions a {
+            text-decoration: none;
+            color: #fefdff;
+            font-weight: 500;
+            transition: 0.6s ease;
+            background-color: #a77b04;
+            border-radius: 30px;
+            padding: 13px;
+        }
+
+        .user-actions a:hover {
+            color: #887878;
+        }
+
+        .recipe-details {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        .recipe-details h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .recipe-details ul {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 15px;
+        }
+
+        .recipe-details ul li {
+            margin-bottom: 5px;
+        }
+
+        .recipe-details img {
+          display: block;
+            margin: 10px auto;
+            max-width: 100%;
+            max-height: 400px; /* Définir une hauteur maximale pour la photo */
+        }
+
+        /* Ajout de l'espacement au début des éléments de la liste des ingrédients et de la liste de préparation */
+        .recipe-details ul li ul li,
+        .recipe-details ul li ol li {
+            text-indent: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGO1.png" alt="Logo" height="80px" width="80%">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Recherchez des recettes...">
+            <div class="search-icon">
+                <a href="#"><img src="chercher.png" alt="Rechercher"></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="page accueil.html">Accueil</a></li>
+                <li><a href="page recette.html">Recettes</a></li>
+                <li><a href="page a propos.html">À propos</a></li>
+                <li><a href="page contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="user-actions">
+            <a href="login page.html">Se connecter</a>  
+        </div>
+    </header>
+
+    <div class="recipe-details">
+        <h2>PANCAKES</h2>
+        <img src="téléchargement (5).jpg" alt="Photo de la recette">
+        <ul>
+            <li><strong>Liste des ingrédients :</strong>
+                <ul>
+                    <li>1 tasse (125g) de farine tout usage</li>
+                    <li>2 cuillères à soupe de sucre</li>
+                    <li>2 cuillères à café de levure chimique</li>
+                    <li>1/2 cuillère à café de sel</li>
+                    <li>1 tasse (250ml) de lait</li>
+                    <li>1 œuf</li>
+                    <li>2 cuillères à soupe de beurre fondu</li>
+                    <li>1 cuillère à café d'extrait de vanille</li>
+                </ul>
+            </li>
+            <li><strong>Préparation :</strong>
+                <ol>
+                    <li>Dans un grand bol, mélangez la farine, le sucre, la levure chimique et le sel.</li>
+                    <li>Dans un autre bol, battez légèrement l'œuf, puis ajoutez le lait, le beurre fondu et l'extrait de vanille. Mélangez bien.</li>
+                    <li>Versez le mélange liquide dans le bol de farine et remuez jusqu'à ce que tout soit bien incorporé. Attention à ne pas trop mélanger, quelques grumeaux sont acceptables.</li>
+                    <li>Faites chauffer une poêle antiadhésive à feu moyen. Versez environ 1/4 de tasse de pâte pour chaque pancake.</li>
+                    <li>Cuisez les pancakes jusqu'à ce que des bulles se forment à la surface, puis retournez-les et faites cuire de l'autre côté jusqu'à ce qu'ils soient dorés.</li>
+                    <li>Empilez les pancakes et servez-les chauds avec du sirop d'érable, des fruits frais ou d'autres garnitures de votre choix.</li>
+                </ol>
+            </li>
+            <li><strong>Temps de préparation :</strong> environ 10 minutes</li>
+            <li><strong>Temps de cuisson :</strong> environ 15 minutes</li>
+            <li><strong>Nombre de portions :</strong> environ 8 pancakes</li>
+            <li><strong>Coût Total :</strong> abordable, la plupart des ingrédients sont des produits de base de la cuisine.</li>
+        </ul>
+    </div>
+</body>
+</html>

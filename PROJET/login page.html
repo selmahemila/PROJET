@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes</title>
+    <style>
+        /* Styles CSS pour la mise en page */
+        body {
+            font-family: cursive, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            position: relative; /* Ajout d'une position relative pour positionner l'image absolument */
+            border: gray;
+        }
+
+        .search-bar input[type="text"] {
+           /* width: calc(70% - 40px); /* Ajustement de la largeur du champ de saisie */
+           width: 90%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .menu {
+            margin-right: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #140131;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: 0.6s ease;
+        }
+
+        .menu ul li a:hover {
+            color: #000;
+        }
+
+        .login-box {
+            width: 450px; /* Augmentation de la largeur */
+            height: 400px; /* Augmentation de la hauteur */
+            background: none;
+            color: #fff;
+            top: 70%; /* Déplacement vers le milieu */
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            box-sizing: border-box;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 30px; /* Ajout de border-radius */
+            border: 2px solid #000; /* Ajout d'une bordure */
+            background-image: url( Premium\ Vector\ _\ Hand\ drawn\ seamless\ pattern\ on\ the\ theme\ of\ chef\,\ kitchen\ and\ cook_\ \(1\).jpg);
+             
+        }
+
+        .login-box h2 {
+            margin: 0 0 30px;
+            padding: 0;
+            color: #000000;
+            text-align: center;
+            background-color: white;
+        }
+
+        .textbox {
+            width: 100%;
+            overflow: hidden;
+            font-size: 20px;
+            padding: 8px 0;
+            margin: 8px 0;
+            background-color: white;
+        }
+
+        .textbox input {
+            border:  2px solid #000;;
+            outline: none;
+            background: none;
+            color: #000000;
+            font-size: 16px;
+            width: 91%;
+            float: left;
+            margin: 0px 10px 0px 0px;
+            border-radius: 30px;
+            padding: 13px;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .textbox label{
+            color: #000;
+        }
+
+        .btn {
+            width: 100%;
+            background: #a77b04;
+            border: none;
+            color: #fcfafa;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 30px;
+            padding: 13px;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        /* Style pour le lien "Don't have account? Sign up!" */
+        .signup-link {
+            color: #000;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 20px; /* Ajout de marge en haut */
+            display: block; /* Pour forcer le saut de ligne */
+            text-align: center;
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+ 
+    <header>
+        <div class="logo">
+            <img src="LOGO1.png" alt="Logo" height="80px" width="80%">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Recherchez des recettes...">
+            <div class="search-icon">
+                <a href="#"><img src="chercher.png" alt="Rechercher"></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="page accueil.html">Accueil</a></li>
+                <li><a href="recipes_grid.php">Recettes</a></li>
+                <li><a href="page a propos.html">À propos</a></li>
+                <li><a href="page contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+            <div class="textbox">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Adresse Email" required> 
+            </div>
+            <div class="textbox">
+                <label for="password">Mot de passe </label>
+                <input type="password" name="password"  placeholder="Mot de passe" required> 
+            </div>
+            <input class="btn" type="submit" name="Submit" value="Connexion">
+            <a href="page inscription.html">
+            <p class="signup-link">Vous n'avez pas de compte ? Inscrivez-vous !</p> 
+        </a>
+        </form>
+    </div>
+</body>
+</html>
+
+ 

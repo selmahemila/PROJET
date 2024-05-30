@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes</title>
+    <style>
+        /* Styles CSS pour la mise en page */
+        body {
+            font-family: cursive, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #fffdfde8;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            position: relative; /* Ajout d'une position relative pour positionner l'image absolument */
+            border: gray;
+        }
+
+        .search-bar input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .menu {
+            margin-right: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #140131;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: 0.6s ease;
+        }
+
+        .menu ul li a:hover {
+            color: #000;
+        }
+
+        /* Styles pour le formulaire de soumission de recette */
+        .recipe-form {
+            margin: 20px auto; /* Pour centrer le formulaire horizontalement */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            max-width: 600px; /* Limite la largeur du formulaire */
+            max-height: 850px;
+            border-radius: 20px;
+            border: 1px solid #000;
+            background-image: url( Premium\ Vector\ _\ Hand\ drawn\ seamless\ pattern\ on\ the\ theme\ of\ chef\,\ kitchen\ and\ cook_\ \(1\).jpg);
+            display: grid; /* Utilisation de la grille CSS */
+            grid-template-columns: 100%; /* Une seule colonne */
+        }
+
+        h2{
+            background-color: white;
+            grid-column: 1 / -1; /* Span the entire width of the grid */
+        }
+
+        .recipe-form label {
+            display: block;
+            margin-bottom: 5px;
+            background-color: white;
+        }
+
+        .recipe-form input[type="text"],
+        .recipe-form textarea,
+        .recipe-form button,
+        .recipe-form input[type="file"],
+        .recipe-form select {
+            width: calc(100% - 20px); /* Ajuste la largeur à 100% moins la marge */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            border: 1px solid #000;
+        }
+
+        .recipe-form button {
+            background-color: #a77b04;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 30px;
+        }
+
+        .recipe-form button:hover {
+            background-color: #000;
+        }
+
+        /* Styles pour le bouton de soumission */
+        .submit-button {
+            text-align: center;
+            margin-top: 20px;
+            grid-column: 1 / -1; /* Span the entire width of the grid */
+        }
+
+        /* Styles pour les nouvelles cases */
+        .recipe-form .portions {
+            grid-column: span 1; /* Span 1 column */
+        }
+
+        .recipe-form input[type="file"] {
+            border: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGO1.png" alt="Logo" height="80px" width="80%">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Recherchez des recettes...">
+            <div class="search-icon">
+                <a href="#"><img src="chercher.png" alt="Rechercher"></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="page accueil.html">Accueil</a></li>
+                <li><a href="recipes_grid.php">Recettes</a></li>
+                <li><a href="page a propos.html">À propos</a></li>
+                <li><a href="page contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="recipe-form">
+        <h2>Soumettre une recette</h2>
+        <form action="save_recipe.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" id="user-id" name="user-id" value="<?php echo $_SESSION['user_id']; ?>" required>
+    
+            <label for="recipe-name">Nom de la recette :</label>
+            <input type="text" id="recipe-name" name="recipe-name" required>
+    
+            <label for="ingredients">Ingrédients :</label>
+            <div id="ingredients-container">
+                <textarea id="ingredients" name="ingredients[]" rows="4" required></textarea>
+            </div>
+            <button type="button" onclick="addIngredient()">Ajouter un autre ingrédient</button>
+    
+            <label for="instructions">Préparation :</label>
+            <div id="instructions-container">
+                <textarea id="instructions" name="instructions[]" rows="4" required></textarea>
+            </div>
+            <button type="button" onclick="addInstruction()">Ajouter une autre instruction</button>
+    
+            <label for="prep-time">Temps de préparation :</label>
+            <input type="text" id="prep-time" name="prep-time" required>
+    
+            <label for="cook-time">Temps de cuisson :</label>
+            <input type="text" id="cook-time" name="cook-time" required>
+    
+            <label for="recipe-type">Type de recette :</label>
+            <select id="recipe-type" name="recipe-type" required>
+                <option value="" disabled selected>Choisissez le type de recette</option>
+                <option value="sale">Salé</option>
+                <option value="sucre">Sucré</option>
+            </select>
+    
+            <label for="recipe-date">Date de publication :</label>
+            <input type="date" id="recipe-date" name="recipe-date" required>
+    
+            <label for="recipe-image">Ajouter une photo ou une vidéo :</label>
+            <input type="file" id="recipe-image" name="recipe-image" accept="image/*, video/*" required>
+    
+            <div class="submit-button">
+                <button type="submit">Valider</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+    function addIngredient() {
+        var newIngredient = document.createElement('textarea');
+        newIngredient.name = 'ingredients[]';
+        newIngredient.rows = 4;
+        document.getElementById('ingredients-container').appendChild(newIngredient);
+    }
+    
+    function addInstruction() {
+        var newInstruction = document.createElement('textarea');
+        newInstruction.name = 'instructions[]';
+        newInstruction.rows = 4;
+        document.getElementById('instructions-container').appendChild(newInstruction);
+    }
+    </script>
+    
+</body>
+</html>

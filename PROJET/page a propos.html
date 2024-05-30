@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes - À propos</title>
+    <style>
+        /* Styles CSS pour la mise en page */
+        body {
+           /* font-family: Arial, sans-serif;*/
+            margin: 0;
+            padding: 0;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        header {
+            background-color: #fffdfde8;
+            padding: 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            position: relative; /* Ajout d'une position relative pour positionner l'image absolument */
+            border: gray;
+        }
+
+        .search-bar input[type="text"] {
+           /* width: calc(70% - 40px); /* Ajustement de la largeur du champ de saisie */
+           width: 90%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .menu {
+            margin-right: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #140131;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: 0.6s ease;
+        }
+
+        .menu ul li a:hover {
+            color: #000;
+        }
+
+        h2{
+            text-align: center;
+            font-size: 40px;
+            text-transform: uppercase;
+            font-family: cursive, Helvetica, sans-serif;
+            color: #011b31;
+        }
+
+
+        .user-actions a {
+            text-decoration: none;
+            color: #fefdff;
+            font-weight: 500;
+            transition: 0.6s ease;
+            background-color: #a77b04;
+            border-radius: 30px;
+            padding: 13px;
+        }
+
+        .user-actions a:hover {
+            color: #000;
+        }
+
+        .about-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .about-section .text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .about-section .text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 5px;
+            color: #011b31;
+        }
+
+        .about-section .text p {
+            font-size: 16px;
+            line-height: 1.6;
+            text-indent: 50px;
+        }
+
+        .about-section .image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-section .image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGO1.png" alt="Logo" height="80px" width="80%">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Recherchez des recettes...">
+            <div class="search-icon">
+                <a href="#"><img src="chercher.png" alt="Rechercher"></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="page accueil.html">Accueil</a></li>
+                <li><a href="page recette.html">Recettes</a></li>
+                <li><a href="page a propos.html">À propos</a></li>
+                <li><a href="page contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="user-actions">
+            <a href="login page.html">Se connecter</a>  
+        </div>
+    </header>
+
+    <h2>À propos de Nous</h2>
+    <div class="about-section">
+        <div class="text">
+            <h3>Notre Histoire</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc.</p>
+            <p>Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc.</p>
+        </div>
+        <div class="image">
+            <img src="collage recette.png" alt="À propos de Nous">
+        </div>
+    </div>
+</body>
+</html>

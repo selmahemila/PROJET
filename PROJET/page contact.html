@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Recettes</title>
+    <style>
+        /* Styles CSS pour la mise en page */
+        body {
+            font-family: cursive, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .search-bar {
+            flex: 1;
+            margin: 0 20px;
+            position: relative; 
+            border: gray;
+        }
+
+        .search-bar input[type="text"] {
+           width: 90%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-family: cursive, Helvetica, sans-serif;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            top: 50%;
+            right: 40px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .menu {
+            margin-right: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu ul li {
+            margin-left: 20px;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #140131;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: 0.6s ease;
+        }
+
+        .menu ul li a:hover {
+            color: #000;
+        }
+
+        .user-actions a {
+            text-decoration: none;
+            color: #fefdff;
+            font-weight: 500;
+            transition: 0.6s ease;
+            background-color: #a77b04;
+            border-radius: 30px;
+            padding: 13px;
+        }
+
+        .user-actions a:hover {
+            color: #000;
+        }
+
+        .contact-form {
+           width: 500px;
+           margin: 50px auto;
+           padding: 20px;
+         border: 1px solid #ccc;
+         border-radius: 20px;
+        position: relative;
+        }
+
+        .contact-form::before {
+          content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+        background-image: url("hero-image.jpg");
+         background-repeat: no-repeat;
+         background-size: cover;
+        filter: blur(5px);
+         z-index: -1;
+        }
+
+.contact-form h2,
+.textbox input,
+.textbox textarea,
+.btn {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #000000;
+}
+
+.textbox {
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+}
+
+.textbox input,
+.textbox textarea {
+    border:  2px solid #000;
+    outline: none;
+    background: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    width: 91%;
+    float: left;
+    margin: 0px 10px 0px 0px;
+    border-radius: 30px;
+    padding: 13px;
+}
+
+.btn {
+    width: 100%;
+    background: #a77b04;
+    border: none;
+    padding: 10px;
+    color: #fcfafa;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+/* Nouveau style pour le message de succès */
+#success-message {
+    text-align: center;
+    color: green;
+    display: none; /* Initialement caché */
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+ 
+    <header>
+        <div class="logo">
+            <img src="LOGO1.png" alt="Logo" height="80px" width="80%">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Recherchez des recettes...">
+            <div class="search-icon">
+                <a href="#"><img src="chercher.png" alt="Rechercher"></a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="page accueil.html">Accueil</a></li>
+                <li><a href="page recette.html">Recettes</a></li>
+                <li><a href="page a propos.html">À propos</a></li>
+                <li><a href="page contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="user-actions">
+            <a href="login page.html">Se connecter</a>  
+        </div>
+    </header>
+
+    <div class="contact-form">
+        <h2>Contactez-nous</h2>
+        <form name="contactForm" action="/contact" method="post" >
+            <div class="textbox">
+                <input type="text" name="name" placeholder="Nom" required><br><br>
+            </div>
+            <div class="textbox">
+                <input type="email" name="email" placeholder="Adresse Email" required><br><br>
+            </div>
+            <div class="textbox">
+                <textarea name="message" rows="6" placeholder="Votre message" required></textarea><br><br>
+            </div>
+            <input class="btn" type="submit" value="Envoyer" onclick="validateForm()">
+        </form>
+        <!-- Message de succès -->
+        <div id="success-message">Votre message a été envoyé. Merci !</div>
+    </div>
+
+    <script>
+         function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Tous les champs doivent être remplis.");
+                return false;
+            } else {
+                // Afficher le message de succès
+                alert("Votre message a été envoyé. Merci !");
+                // Réinitialiser les champs du formulaire
+                document.getElementById("name").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("message").value = "";
+                return true;
+            }
+        }
+    </script>
+
+</body>
+</html>
